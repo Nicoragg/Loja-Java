@@ -1,5 +1,5 @@
 # Loja de Cogumelos em Java
-Claro! Vamos detalhar cada ponto ainda mais:
+
 
 1. **CRUD's (Cadastro, Alteração, Deleção e Listagem):**
    - Para cada entidade do sistema, crie métodos específicos para realizar as operações CRUD.
