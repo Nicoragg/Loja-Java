@@ -1,60 +1,57 @@
 # Loja de Cogumelos em Java
+Claro! Vamos detalhar cada ponto ainda mais:
 
-CRUD's (Cadastro, Alteração, Deleção e Listagem):
+1. **CRUD's (Cadastro, Alteração, Deleção e Listagem):**
+   - Para cada entidade do sistema, crie métodos específicos para realizar as operações CRUD.
+   - Para o cadastro, implemente um método que receba os dados necessários como parâmetros e crie um novo objeto da entidade correspondente.
+   - Para a alteração, crie um método que receba o ID do objeto a ser alterado e os novos dados, e atualize o objeto existente com as informações fornecidas.
+   - Para a deleção, implemente um método que receba o ID do objeto a ser excluído e remova-o da lista de objetos ou marque-o como inativo, dependendo dos requisitos.
+   - Para a listagem, crie um método que retorne uma lista com todos os objetos da entidade ou implemente métodos de busca que retornem apenas os objetos que correspondam a determinados critérios.
 
-Para cada entidade do sistema (como Produto, Cliente, Pedido, etc.), implemente métodos para:
-Cadastrar um novo item. Alterar informações de um item existente. Deletar um item. 
-Listar todos os itens ou buscar por critérios específicos.
-Relação entre CRUD's:
+2. **Relação entre CRUD's:**
+   - Identifique as associações entre as entidades do seu sistema e defina como essas associações serão representadas no código.
+   - Por exemplo, se um Pedido possui uma lista de Produtos, crie um atributo na classe Pedido do tipo List<Produto> para armazenar os produtos associados a esse pedido.
+   - Utilize chaves estrangeiras ou referências entre as entidades para estabelecer as relações no banco de dados ou na memória.
 
-Identifique as relações entre as entidades do sistema e estabeleça as associações apropriadas. Por exemplo:
-Um Pedido pode conter vários Produtos. Um Cliente pode fazer vários Pedidos.
-Implemente essas relações através de atributos nas classes ou usando tabelas intermediárias, dependendo do seu modelo de dados.
-Super Classe:
+3. **Super Classe:**
+   - Crie uma classe abstrata que contenha os atributos e métodos comuns a todas as entidades do sistema.
+   - Esses atributos podem incluir informações como ID, nome, descrição, data de criação, etc.
+   - Implemente métodos getter e setter para acessar e modificar esses atributos.
 
-Crie uma classe abstrata.
-Adicione atributos comuns a todas as entidades do sistema, como id, nome, descricao, etc.
-Implemente métodos getter e setter para esses atributos.
-Classe Abstrata:
+4. **Classe Abstrata:**
+   - Identifique os comportamentos comuns entre diferentes tipos de objetos e crie uma classe abstrata para representá-los.
+   - Por exemplo, se todos os produtos têm um método para calcular o preço, coloque esse método na classe abstrata Produto e torne-o abstrato para que as subclasses o implementem de acordo com suas especificações.
 
-Identifique comportamentos comuns entre diferentes tipos de objetos do seu 
-sistema (por exemplo, diferentes tipos de cogumelos) e crie uma classe abstrata para representá-los.
-Defina métodos abstratos que devem ser implementados pelas subclasses.
+5. **Polimorfismo de Sobrescrita:**
+   - Na classe abstrata ou superclasse, defina métodos que serão comuns a todas as subclasses.
+   - Nas subclasses, sobrescreva esses métodos conforme necessário para ajustá-los às particularidades de cada tipo de objeto.
 
-Polimorfismo de Sobrescrita:
+6. **Polimorfismo de Sobrecarga:**
+   - Implemente métodos com o mesmo nome, mas com assinaturas diferentes, para lidar com diferentes tipos de entrada ou comportamentos.
+   - Por exemplo, você pode ter métodos sobrecarregados para adicionar produtos ao carrinho, aceitando diferentes tipos de parâmetros, como um único produto ou uma lista de produtos.
 
-Sobrescreva métodos da classe pai nas subclasses para adaptá-los às suas necessidades específicas.
-Por exemplo, você pode sobrescrever o método calcularPreco() na classe abstrata Produto e implementá-lo de forma diferente em cada tipo de cogumelo.
-Polimorfismo de Sobrecarga:
+7. **Interface:**
+   - Identifique comportamentos comuns que podem ser compartilhados por diferentes classes e defina uma interface que as represente.
+   - Por exemplo, você pode ter uma interface `Vendavel` que define métodos como `calcularPreco()` e `getNome()` que todas as classes de produto devem implementar.
 
-Sobrecarregue métodos com o mesmo nome, mas com assinaturas diferentes, para lidar com diferentes situações.
-Por exemplo, você pode ter vários métodos adicionarProduto() na classe Carrinho, cada um aceitando diferentes tipos de parâmetros ou realizando diferentes operações.
+8. **Encapsulamento:**
+   - Defina os atributos das suas classes como privados para proteger o acesso direto a eles.
+   - Forneça métodos getter e setter públicos para permitir o acesso controlado aos atributos.
 
-Interface:
+9. **MVC (Model, View e Controller):**
+   - Divida seu código em três camadas: Model, View e Controller.
+   - Model: Contém a lógica de negócio e as classes de entidades.
+   - View: Responsável pela interface com o usuário, como telas e formulários.
+   - Controller: Coordena as interações entre a View e o Model, recebendo as entradas do usuário, chamando os métodos apropriados no Model e atualizando a View conforme necessário.
 
-Identifique comportamentos comuns que devem ser implementados por diferentes classes e defina uma interface que represente esses comportamentos.
-Por exemplo, você pode ter uma interface Vendavel com métodos como calcularPreco() e getNome() que todas as classes de produto devem implementar.
-Encapsulamento:
+10. **Utilizar estruturas de laço e controle:**
+    - Use estruturas de laço (for, foreach, while ou do while) para percorrer listas de itens ou realizar iterações repetidas.
+    - Use estruturas de controle (if, else if, else ou switch) para tomar decisões com base em condições específicas.
 
-Defina os atributos das suas classes como privados para garantir o encapsulamento.
-Forneça métodos getter e setter públicos para acessar e modificar os atributos, quando necessário.
-MVC (Model, View e Controller):
+11. **Log:**
+    - Implemente uma classe de log que seja responsável por registrar informações relevantes do sistema.
+    - Utilize a classe `FileWriter` para escrever as informações em um arquivo de texto específico.
 
-
-Organize o projeto em três camadas distintas:
-Model: Contém a lógica de negócio, como classes de entidades e operações CRUD.
-View: Responsável pela interface com o usuário, como telas de cadastro, listagem e carrinho de compras.
-Controller: Coordena as interações entre o Model e a View, recebendo solicitações do usuário, chamando os métodos apropriados no Model e atualizando a View conforme necessário.
-Utilizar estruturas de laço e controle:
-
-Utilize estruturas de laço (for, foreach, while ou do while) e estruturas de controle (if, else if, else ou switch) 
-conforme necessário para controlar o fluxo do programa e iterar sobre listas de itens.
-Log:
-
-Crie uma classe de log que seja responsável por escrever informações relevantes em um arquivo de texto.
-Implemente métodos para registrar eventos específicos, como erros ou atividades do sistema.
-Utilize a classe FileWriter para escrever no arquivo de log.
-Serialização:
-
-Implemente métodos de serialização e desserialização nas classes que precisam ser salvadas e recuperadas.
-Utilize as classes ObjectOutputStream e ObjectInputStream para salvar e carregar objetos em arquivos.
+12. **Serialização:**
+    - Implemente métodos de serialização e desserialização nas classes que precisam ser salvas e recuperadas.
+    - Utilize as classes `ObjectOutputStream` e `ObjectInputStream` para salvar e carregar objetos em arquivos.
